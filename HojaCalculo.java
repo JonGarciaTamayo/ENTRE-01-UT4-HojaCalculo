@@ -5,7 +5,7 @@
  *  En cada fila la empresa "apunta" los ingresos y gastos en 
  *  una determinada fecha
  * 
- * @author -   
+ * @author - Jon García   
  *  
  */
 public class HojaCalculo
@@ -21,44 +21,32 @@ public class HojaCalculo
      * e inicializa las filas al valor null (inicialmente
      * la hoja se crea sin filas)
      */
-    public HojaCalculo(String nombre)    {
+    public HojaCalculo(String nombre){
         this.nombre = nombre;
         this.fila1 = null;
-        this.fila1 = null;
-        this.fila1 = null;
+        this.fila2 = null;
+        this.fila3 = null;
 
     }
 
-    /**
-     * accesor para el nombre de la hoja
-     */
+    // Accesor o Getter para el nombre de la hoja
     public String getNombre() {
         return this.nombre;
-
     }
 
-    /**
-     * accesor para la fila1
-     */
+    // Accesor o Getter para la fila1
     public Fila getFila1() {
         return fila1;
-
     }
 
-    /**
-     * accesor para la fila2
-     */
+    // Accesor o Getter para la fila2
     public Fila getFila2() {
         return fila2;
-
     }
 
-    /**
-     * accesor para la fila3
-     */
+    // Accesor o Getter para la fila3
     public Fila getFila3() {
         return fila3;
-
     }
 
     /**
@@ -66,18 +54,20 @@ public class HojaCalculo
      * (dependerá de cuántas filas estén a null)
      */
     public int getNumeroFilas() {
-        
         return 0;
-
     }
-
+    
     /**
      * Devuelve true si la hoja está completa
      * (tiene exactamente 3 filas)
      */
-    public boolean hojaCompleta() {
-        return true;
-
+    public boolean hojaCompleta(){
+        if(this.fila1 != null){
+            if(this.fila2 != null){
+                if(this.fila3 != null){
+                    return true;
+                }
+            }       
     }
 
     /**
@@ -86,9 +76,14 @@ public class HojaCalculo
      * Si no está completa se añade la fila a la hoja teniendo en cuenta
      * si se añade como primera, segunda o tercera fila (no han de quedar huecos)
      */
-    public void addFila(Fila fila) {
-         
-
+    
+    public void addfila(Fila fila){
+        if(hojaCompleta = true){
+            System.out.println("Fila " + fila + "no se puede añadir en Hoja");
+        }
+        else{
+            //añadir filas
+        }
     }
 
     /**
@@ -106,8 +101,6 @@ public class HojaCalculo
      * todas las filas que incluye la hoja
      */
     public double getTotalIngresos() {
-         
-
         return 0;
 
     }
